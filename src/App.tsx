@@ -29,31 +29,21 @@ const pokemonList = [
 ];
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
-  const handleClickNext = () => {
-    setPokemonIndex(pokemonIndex + 1);
-  };
-  const handleClickPrevious = () => {
-    setPokemonIndex(pokemonIndex - 1);
-  };
+  
 
   return (
+    <body>
+      <nav>
+      {pokemonList.map((pokemon) => (
+      <button key={pokemon.name} type="button" >{pokemon.name}</button>
+  ))}
+        {/* onClick={() => removeArticle(article)} */}
+      </nav>
+    
     <section>
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-      {pokemonIndex > 0 ? (
-        <button type="button" onClick={handleClickPrevious}>
-          précédent
-        </button>
-      ) : (
-        <p> </p>
-      )}
-      {pokemonIndex < pokemonList.length - 1 ? (
-        <button type="button" onClick={handleClickNext}>
-          suivant
-        </button>
-      ) : (
-        <p> </p>
-      )}
     </section>
+    </body>
   );
 }
 
