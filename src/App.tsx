@@ -29,20 +29,25 @@ const pokemonList = [
 ];
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
-  
 
   return (
     <body>
       <nav>
-      {pokemonList.map((pokemon) => (
-      <button key={pokemon.name} type="button" >{pokemon.name}</button>
-  ))}
-        {/* onClick={() => removeArticle(article)} */}
+        {pokemonList.map((pokemon, i) => (
+          <button
+            onClick={() => setPokemonIndex(i)}
+            value={pokemon.name}
+            key={pokemon.name}
+            type="button"
+          >
+            {pokemon.name}
+          </button>
+        ))}
       </nav>
-    
-    <section>
-      <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-    </section>
+
+      <section>
+        <PokemonCard pokemon={pokemonList[pokemonIndex]} />
+      </section>
     </body>
   );
 }
