@@ -11,6 +11,7 @@ interface NavBarProps {
 function NavBar(
   { setPokemonIndex, pokemonList }: NavBarProps,
 ) {
+    
   return (
     <nav>
       {pokemonList.map((pokemon: Pokemon, i) => (
