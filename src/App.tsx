@@ -32,10 +32,14 @@ const pokemonList = [
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
   useEffect(() => {
-    alert("hello pokemon trainer :)");
-  }, []);
-  if (pokemonIndex === 3) { alert("pika pikachu !!!");
-  }
+		alert("hello pokemon trainer :)");
+	}, []);
+
+	useEffect(() => {
+		if (pokemonList[pokemonIndex].name === "pikachu") {
+			alert("pika pikachu !!!");
+		}
+	}, [pokemonIndex]);
   return (
     <body>
       <div>
